@@ -119,14 +119,14 @@ public class MyLibraryTest extends TestCase
 	public void testGetAvailableBooks()
 	{
 		setUp();
-		assertEquals(2,lib.getAvailableBooks());
+		assertEquals(2,lib.getAvailableBooks().size());
 		lib.bookCheckout(b1, p1);
-		assertEquals(1,lib.getAvailableBooks());
+		assertEquals(1,lib.getAvailableBooks().size());
 		lib.bookCheckout(b2, p1);
-		assertEquals(0,lib.getAvailableBooks());
+		assertEquals(0,lib.getAvailableBooks().size());
 		lib.bookCheckin(b1, p1);
-		assertEquals(1,lib.getAvailableBooks());
+		assertEquals(1,lib.getAvailableBooks().size());
 		lib.bookCheckin(b2, p1);
-		assertEquals(2,lib.getAvailableBooks());
+		assertEquals(2,lib.getAvailableBooks().size());
 	}
 }

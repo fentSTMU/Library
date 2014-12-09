@@ -100,15 +100,15 @@ public class MyLibrary
 		return bookCount;
 	}
 
-	public int getAvailableBooks() 
+	public ArrayList<Book> getAvailableBooks() 
 	{
-		int bookCount = 0;
 		int index = 0;
 		ArrayList<Book> allBooks = this.getBooks();
+		ArrayList<Book> avlBooks = new ArrayList<Book>();
 		
 		if(allBooks == null)
 		{
-			return bookCount;
+			return avlBooks;
 		}
 		
 		
@@ -116,10 +116,10 @@ public class MyLibrary
 		{
 			if((allBooks.get(index).getBorrower() == null))
 			{
-				bookCount++;
+				avlBooks.add(allBooks.get(index));
 			}
 		}
-		return bookCount;
+		return avlBooks;
 	}
 
 	
